@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listening Text 11</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+ <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f7fb;
+      color: #333;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      align-items: flex-start;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .home-btn {
+      background: linear-gradient(to right, #00b4db, #0083b0);
+      color: white;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 16px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 132, 176, 0.2);
+      transition: background 0.3s ease;
+    }
+
+    .home-btn:hover {
+      background: linear-gradient(to right, #0095c7, #00648c);
+    }
+
+    .dropdown-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .dropdown-group label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    select {
+      padding: 10px 16px;
+      font-size: 16px;
+      border: 2px solid #40c4ff;
+      border-radius: 10px;
+      background: white;
+      color: #333;
+      box-shadow: 0 2px 8px rgba(64, 196, 255, 0.2);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    select:hover {
+      border-color: #00b0ff;
+      box-shadow: 0 4px 12px rgba(0, 176, 255, 0.3);
+    }
+
+    .nav-buttons {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .nav-btn {
+      text-decoration: none;
+      background-color: #0077cc;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: bold;
+      margin: 0 10px;
+      transition: background-color 0.3s;
+    }
+
+    .nav-btn:hover {
+      background-color: #005fa3;
+    }
+
+    .listening-section {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    }
+
+    h2 {
+      color: #007acc;
+      margin-top: 30px;
+      font-weight: 600;
+    }
+
+    form ol {
+      padding-left: 20px;
+    }
+
+    form li {
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    button {
+      background: linear-gradient(to right, #00b4db, #0083b0);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 20px;
+      box-shadow: 0 4px 12px rgba(0, 132, 176, 0.2);
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #0095c7, #00648c);
+    }
+
+    @media (max-width: 600px) {
+      .top-bar {
+        flex-direction: column;
+        align-items: center;
+      }
+      button, select {
+        width: 100%;
+      }
+    }
+    audio {
+  width: 100%;
+  max-width: 500px; /* Giới hạn tối đa */
+  height: 32px; /* Giảm chiều cao */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  background: #f0f0f0;
+  margin: 10px auto;
+  display: block;
+}
+  </style></head>
+<body>
+    <div class="top-bar">
+    <a href="index.html" class="home-btn">🏠 HOME Page</a>
+    <div class="dropdown-group">
+      <label for="pageSelect">Select Listening:</label>
+      <select id="pageSelect" onchange="location = this.value;">
+        <option value="">-- Choose Text --</option>
+        <option value="listentext6.html">Listening Text 6</option>
+        <option value="listentext7.html">Listening Text 7</option>
+        <option value="listentext8.html">Listening Text 8</option>
+        <option value="listentext9.html">Listening Text 9</option>
+        <option value="listentext10.html">Listening Text 10</option>
+        <option value="listentext11.html">Listening Text 11</option>
+        <option value="listentext18.html">Listening Text 18</option>
+        <option value="listentext31.html">Listening Text 31</option>
+      </select>
+    </div>
+  </div>
+    <h1>Listening Text 11</h1>
+    <audio controls style="width: 100%; margin-bottom: 20px;">
+  <source src="audios/text11.mp3" type="audio/mpeg">
+</audio>
+    <div class="listening-section">
+        <h2>Part 1: True/False Statements</h2>
+        <form id="lt11-tf-form">
+            <ol>
+                <li>The speaker is the daughter of Deborah and Joseph.
+                    <label><input type="radio" name="tf1" value="T"> T</label>
+                    <label><input type="radio" name="tf1" value="F"> F</label>
+                </li>
+                <li>Deborah was studying art history.
+                    <label><input type="radio" name="tf2" value="T"> T</label>
+                    <label><input type="radio" name="tf2" value="F"> F</label>
+                </li>
+                <li>Deborah went to the restaurant to meet someone.
+                    <label><input type="radio" name="tf3" value="T"> T</label>
+                    <label><input type="radio" name="tf3" value="F"> F</label>
+                </li>
+                <li>Joseph sat at her table because the restaurant was crowded.
+                    <label><input type="radio" name="tf4" value="T"> T</label>
+                    <label><input type="radio" name="tf4" value="F"> F</label>
+                </li>
+                <li>Joseph and Deborah liked each other immediately.
+                    <label><input type="radio" name="tf5" value="T"> T</label>
+                    <label><input type="radio" name="tf5" value="F"> F</label>
+                </li>
+                <li>Deborah gave Joseph a piece of paper.
+                    <label><input type="radio" name="tf6" value="T"> T</label>
+                    <label><input type="radio" name="tf6" value="F"> F</label>
+                </li>
+            </ol>
+        </form>
+        <button id="submit-lt11-tf">Submit True/False</button>
+        <div id="lt11-tf-result"></div>
+        <hr>
+        <h2>Part 2: Fill in the Missing Words</h2>
+        <form id="lt11-fill-form">
+            <p>
+                In 1947, my mother, Deborah, was a twenty-one-year-old student at New York University, studying English (<input type="text" name="f1" size="8">). My father, Joseph was an (<input type="text" name="f2" size="8">) teacher. On Saturdays, he often painted all day and then went out for a meal. One Saturday, he chose a (<input type="text" name="f3" size="8">) restaurant called the Milky Way.<br>
+                The Milky Way happened to be my mother's (<input type="text" name="f4" size="8">) restaurant, and that Saturday, she went there for dinner, carrying a used copy of Charles Dickens's Great Expectations. The restaurant was crowded, and she was given the last table. Reading her book, she quickly lost (<input type="text" name="f5" size="8">) with what was going on around her. When the waitress came over and asked her if she would mind sharing her table with someone, she agreed (<input type="text" name="f6" size="8">) even looking up from her book.<br>
+                "A (<input type="text" name="f7" size="8">) life for poor, dear Pip," my father said when he saw the tattered cover of Great Expectations. My mother looked up at him, and to this day she says she saw something (<input type="text" name="f8" size="8">) in his eyes.<br>
+                Whatever it was that my parents saw, heard, or felt that night, they both understood that something (<input type="text" name="f9" size="8">) had happened. They talked for hours. Later, my mother wrote her telephone number on the inside of Great Expectations and gave the book to my father. He said goodbye, and they went off in (<input type="text" name="f10" size="8">) directions. That night, neither one of them was able to sleep.
+            </p>
+        </form>
+        <button id="submit-lt11-fill">Submit Fill-in-the-Blanks</button>
+        <div id="lt11-fill-result"></div>
+    </div>
+    <script src="listentext11.js"></script>
+</body>
+</html> 

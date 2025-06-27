@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Email Practice</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Email Writing Practice</h1>
+    <div class="nav-buttons">
+        <a href="index.html" class="nav-btn">Quiz Page</a>
+    </div>
+  <!-- Dropdown chọn đề -->
+  <label for="topic-selector">Select Topic:</label>
+  <select id="topic-selector">
+    <option value="0">Topic 16</option>
+    <option value="1">Topic 17</option>
+    <option value="2">Topic 18</option>
+  </select>
+
+  <!-- Phần hiển thị đề -->
+  <div id="writing-prompts">
+    <h2>Topic:</h2>
+    <p id="prompt"></p>
+  </div>
+
+  <!-- Khung viết -->
+  <textarea id="writing-area" placeholder="Write your email here..." rows="15" cols="80"></textarea>
+
+  <!-- Đếm số từ -->
+  <div id="word-count">Word count: 0</div>
+
+  <!-- Đặt script NGAY TRƯỚC </body> -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const emailTopics = [
+        `Topic 16:
+You have just moved into a new home and are planning to hold a house-warming. You are worried that the noise may disturb your neighbor. Write a letter with at least 150 words to your neighbor.
+
+In your letter:
+- introduce yourself
+- describe your plans for the party
+- invite your neighbor to come`,
+
+        `Topic 17:
+You have been offered a job that will require you to move to a city that you have never visited before. You have a friend who lives there. Write an email with at least 150 words to your friend.
+
+In your email:
+- explain your situation
+- say why you feel unsure about living in the city
+- ask some questions about life in the city`,
+
+        `Topic 18:
+You have a friend who lives abroad. You have decided to apply for a course at one of the colleges/universities in their city. Write an email with at least 150 words to your friend explaining:
+
+- tell them about the college/university and the course
+- why you want to do it
+- ask for their help to find accommodation if you get admission to the course`
+      ];
+
+      // Hiển thị đề mặc định
+      const prompt = document.getElementById('prompt');
+      prompt.textContent = emailTopics[0];
+
+      // Xử lý đổi đề
+      const selector = document.getElementById('topic-selector');
+      selector.addEventListener('change', () => {
+        const selectedIndex = selector.value;
+        prompt.textContent = emailTopics[selectedIndex];
+      });
+
+      // Đếm từ
+      const writingArea = document.getElementById('writing-area');
+      const wordCount = document.getElementById('word-count');
+
+      writingArea.addEventListener('input', () => {
+        const text = writingArea.value.trim();
+        const words = text === "" ? 0 : text.split(/\s+/).length;
+        wordCount.textContent = `Word count: ${words}`;
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Speaking Practice</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f0f4f8;
+    color: #333;
+    text-align: center;
+    padding: 40px;
+  }
+
+  h1 {
+    color: #2c3e50;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+  }
+
+  label {
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 1.1em;
+  }
+
+  #topic-selector {
+    padding: 8px 16px;
+    font-size: 1em;
+    border-radius: 8px;
+    border: 2px solid #3498db;
+    background: white;
+    margin-bottom: 20px;
+  }
+
+  #speaking-prompts {
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: left;
+  }
+
+  #timer {
+    font-size: 3em;
+    font-weight: bold;
+    color: #e74c3c;
+    margin: 30px 0;
+  }
+
+  .timer-buttons button {
+    display: inline-block;
+    padding: 12px 30px;
+    margin: 10px;
+    background: linear-gradient(90deg, #4f8cff 0%, #38c6d9 100%);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(79,140,255,0.25);
+    transition: all 0.3s ease;
+  }
+
+  .timer-buttons button:hover {
+    background: linear-gradient(90deg, #38c6d9 0%, #4f8cff 100%);
+    transform: translateY(-2px) scale(1.03);
+  }
+
+  .time-inputs {
+    margin: 20px 0;
+  }
+
+  .time-inputs input {
+    width: 70px;
+    padding: 8px;
+    font-size: 1em;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .nav-buttons {
+    margin-bottom: 30px;
+  }
+
+  .nav-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    margin: 0 5px;
+    background: linear-gradient(90deg, #4f8cff 0%, #38c6d9 100%);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .nav-btn:hover {
+    background: linear-gradient(90deg, #38c6d9 0%, #4f8cff 100%);
+    transform: translateY(-2px) scale(1.03);
+  }
+</style>
+
+</head>
+<body>
+  <h1>Speaking Practice</h1>
+
+  <!-- Nút về Home -->
+  <div class="nav-buttons">
+    <a href="index.html" class="nav-btn">Back to Home</a>
+  </div>
+
+  <!-- Chọn đề -->
+  <label for="topic-selector">Select Topic:</label>
+  <select id="topic-selector">
+    <option value="0">Topic 31</option>
+    <option value="1">Topic 32</option>
+    <option value="2">Topic 33</option>
+    <option value="3">Topic 34</option>
+    <option value="4">Topic 35</option>
+    <option value="5">Topic 36</option>
+  </select>
+
+  <!-- Hiển thị đề -->
+  <div id="speaking-prompts">
+    <h2>Topic:</h2>
+    <p id="prompt"></p>
+  </div>
+
+  <!-- Chọn thời gian -->
+  <div class="time-inputs">
+    <label>Minutes:
+      <input type="number" id="minutes-input" value="0" min="0">
+    </label>
+    <label>Seconds:
+      <input type="number" id="seconds-input" value="45" min="0" max="59">
+    </label>
+  </div>
+
+  <!-- Đồng hồ đếm ngược -->
+  <div id="timer">00:45</div>
+
+  <!-- Nút điều khiển Timer -->
+  <div class="timer-buttons">
+    <button id="start-btn">Start</button>
+    <button id="stop-btn">Stop</button>
+    <button id="reset-btn">Reset</button>
+  </div>
+
+  <!-- Âm thanh beep -->
+  <audio id="beep-sound" src="https://www.soundjay.com/button/beep-07.wav" preload="auto"></audio>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const speakingTopics = [
+        `Topic 31: Describe someone you would like to study or work with.
+You should answer:
+- Who is this person?
+- How long have you known this person?
+- What have you done together?
+- Why do you like to study or work with this person?`,
+
+        `Topic 32: Describe your ideal house.
+You should answer:
+- Where is it?
+- What does it look like?
+- When would you like to live in?
+- Why would you like to live in your ideal house?`,
+
+        `Topic 33: Describe a park you like visiting.
+You should answer:
+- Where is the park?
+- When did you visit the park?
+- What is the park like?
+- Why do you like visiting it?`,
+
+        `Topic 34: Describe a situation when you celebrated an achievement.
+You should answer:
+- What did you celebrate?
+- When did you celebrate it?
+- Who did you celebrate it with?
+- How did you feel about that achievement?`,
+
+        `Topic 35: Describe a time when you spent a lot of money on something.
+You should answer:
+- What did you buy?
+- When did you buy it?
+- Where did you buy it?
+- Why did you spend a lot of money to buy it?`,
+
+        `Topic 36: Describe a school you went to in your childhood.
+You should answer:
+- Where was it?
+- What was it like?
+- What did you learn there?
+- How did you feel about it?`
+      ];
+
+      const prompt = document.getElementById('prompt');
+      prompt.textContent = speakingTopics[0];
+
+      const selector = document.getElementById('topic-selector');
+      selector.addEventListener('change', () => {
+        const selectedIndex = selector.value;
+        prompt.textContent = speakingTopics[selectedIndex];
+      });
+
+      // Timer
+      const timer = document.getElementById('timer');
+      const startBtn = document.getElementById('start-btn');
+      const stopBtn = document.getElementById('stop-btn');
+      const resetBtn = document.getElementById('reset-btn');
+      const beepSound = document.getElementById('beep-sound');
+      const minutesInput = document.getElementById('minutes-input');
+      const secondsInput = document.getElementById('seconds-input');
+
+      let countdown;
+      let timeLeft = 45; // mặc định 45 giây
+      let originalTime = 45;
+
+      function updateDisplay() {
+        let minutes = Math.floor(timeLeft / 60);
+        let seconds = timeLeft % 60;
+        timer.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+      }
+
+      function startTimer() {
+        clearInterval(countdown);
+        countdown = setInterval(() => {
+          updateDisplay();
+          if (timeLeft <= 0) {
+            clearInterval(countdown);
+            beepSound.play();
+            alert("Time's up!");
+          }
+          timeLeft--;
+        }, 1000);
+      }
+
+      startBtn.addEventListener('click', () => {
+        const mins = parseInt(minutesInput.value) || 0;
+        const secs = parseInt(secondsInput.value) || 0;
+        originalTime = mins * 60 + secs;
+        if (originalTime > 0) {
+          timeLeft = originalTime;
+          updateDisplay();
+          startTimer();
+        } else {
+          alert("Please enter a valid time greater than 0!");
+        }
+      });
+
+      stopBtn.addEventListener('click', () => {
+        clearInterval(countdown);
+      });
+
+      resetBtn.addEventListener('click', () => {
+        clearInterval(countdown);
+        timeLeft = originalTime;
+        updateDisplay();
+      });
+
+      // Init ban đầu
+      timeLeft = 45;
+      originalTime = 45;
+      updateDisplay();
+    });
+  </script>
+</body>
+</html>

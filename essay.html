@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Essay Practice</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Essay Writing Practice</h1>
+    <div class="nav-buttons">
+        <a href="index.html" class="nav-btn">Quiz Page</a>
+    </div>
+  <!-- Dropdown chọn đề -->
+  <label for="topic-selector">Select Topic:</label>
+  <select id="topic-selector">
+    <option value="0">Topic 16</option>
+    <option value="1">Topic 17</option>
+    <option value="2">Topic 18</option>
+  </select>
+
+  <!-- Phần hiển thị đề -->
+  <div id="writing-prompts">
+    <h2>Topic:</h2>
+    <p id="prompt"></p>
+  </div>
+
+  <!-- Khung viết -->
+  <textarea id="writing-area" placeholder="Write your essay here..." rows="15" cols="80"></textarea>
+
+  <!-- Đếm số từ -->
+  <div id="word-count">Word count: 0</div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const essayTopics = [
+        `Topic 16:
+Many students believe that it's better to gain knowledge in a group rather than individually. Do you agree or disagree?`,
+
+        `Topic 17:
+Some people think women should be given equal chances to work and excel in their careers. Others believe that a woman's role should be limited to taking care of the house and children. Which opinion do you agree with and why? Include specific details and examples to support your choice.`,
+
+        `Topic 18:
+Some people are fond of buying new gadgets, phones, or laptops. Is this a good or bad thing? Discuss your opinion.`
+      ];
+
+      const prompt = document.getElementById('prompt');
+      prompt.textContent = essayTopics[0];
+
+      const selector = document.getElementById('topic-selector');
+      selector.addEventListener('change', () => {
+        const selectedIndex = selector.value;
+        prompt.textContent = essayTopics[selectedIndex];
+      });
+
+      const writingArea = document.getElementById('writing-area');
+      const wordCount = document.getElementById('word-count');
+
+      function countWords(str) {
+        str = str.trim();
+        if (str === "") return 0;
+        return str.split(/\s+/).length;
+      }
+
+      writingArea.addEventListener('input', () => {
+        const text = writingArea.value;
+        const words = countWords(text);
+        wordCount.textContent = `Word count: ${words}`;
+      });
+    });
+  </script>
+</body>
+</html>

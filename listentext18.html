@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listening Text 18</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+ <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f7fb;
+      color: #333;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      align-items: flex-start;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .home-btn {
+      background: linear-gradient(to right, #00b4db, #0083b0);
+      color: white;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 16px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 132, 176, 0.2);
+      transition: background 0.3s ease;
+    }
+
+    .home-btn:hover {
+      background: linear-gradient(to right, #0095c7, #00648c);
+    }
+
+    .dropdown-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .dropdown-group label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    select {
+      padding: 10px 16px;
+      font-size: 16px;
+      border: 2px solid #40c4ff;
+      border-radius: 10px;
+      background: white;
+      color: #333;
+      box-shadow: 0 2px 8px rgba(64, 196, 255, 0.2);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    select:hover {
+      border-color: #00b0ff;
+      box-shadow: 0 4px 12px rgba(0, 176, 255, 0.3);
+    }
+
+    .nav-buttons {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .nav-btn {
+      text-decoration: none;
+      background-color: #0077cc;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: bold;
+      margin: 0 10px;
+      transition: background-color 0.3s;
+    }
+
+    .nav-btn:hover {
+      background-color: #005fa3;
+    }
+
+    .listening-section {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    }
+
+    h2 {
+      color: #007acc;
+      margin-top: 30px;
+      font-weight: 600;
+    }
+
+    form ol {
+      padding-left: 20px;
+    }
+
+    form li {
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    button {
+      background: linear-gradient(to right, #00b4db, #0083b0);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 20px;
+      box-shadow: 0 4px 12px rgba(0, 132, 176, 0.2);
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #0095c7, #00648c);
+    }
+
+    @media (max-width: 600px) {
+      .top-bar {
+        flex-direction: column;
+        align-items: center;
+      }
+      button, select {
+        width: 100%;
+      }
+    }
+    audio {
+  width: 100%;
+  max-width: 500px; /* Giới hạn tối đa */
+  height: 32px; /* Giảm chiều cao */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  background: #f0f0f0;
+  margin: 10px auto;
+  display: block;
+}
+  </style></head>
+<body>
+    <div class="top-bar">
+    <a href="index.html" class="home-btn">🏠 HOME Page</a>
+    <div class="dropdown-group">
+      <label for="pageSelect">Select Listening:</label>
+      <select id="pageSelect" onchange="location = this.value;">
+        <option value="">-- Choose Text --</option>
+        <option value="listentext6.html">Listening Text 6</option>
+        <option value="listentext7.html">Listening Text 7</option>
+        <option value="listentext8.html">Listening Text 8</option>
+        <option value="listentext9.html">Listening Text 9</option>
+        <option value="listentext10.html">Listening Text 10</option>
+        <option value="listentext11.html">Listening Text 11</option>
+        <option value="listentext18.html">Listening Text 18</option>
+        <option value="listentext31.html">Listening Text 31</option>
+      </select>
+    </div>
+  </div>
+    <h1>Listening Text 18</h1>
+    <audio controls style="width: 100%; margin-bottom: 20px;">
+  <source src="audios/text18.mp3" type="audio/mpeg">
+</audio>
+    <div class="listening-section">
+        <h2>Part 1: True/False Statements</h2>
+        <form id="lt18-tf-form">
+            <ol>
+                <li>The story happened to the speaker in Italy 20 years ago.
+                    <label><input type="radio" name="tf1" value="T"> T</label>
+                    <label><input type="radio" name="tf1" value="F"> F</label>
+                </li>
+                <li>The weather was terrible with a lot of rain then.
+                    <label><input type="radio" name="tf2" value="T"> T</label>
+                    <label><input type="radio" name="tf2" value="F"> F</label>
+                </li>
+                <li>The restaurant belonged to the hotel.
+                    <label><input type="radio" name="tf3" value="T"> T</label>
+                    <label><input type="radio" name="tf3" value="F"> F</label>
+                </li>
+                <li>The waitress kept the key to the hotel bathroom.
+                    <label><input type="radio" name="tf4" value="T"> T</label>
+                    <label><input type="radio" name="tf4" value="F"> F</label>
+                </li>
+                <li>The speaker went to the unlocked bathroom alone.
+                    <label><input type="radio" name="tf5" value="T"> T</label>
+                    <label><input type="radio" name="tf5" value="F"> F</label>
+                </li>
+                <li>The creaking noise came from the bathroom window.
+                    <label><input type="radio" name="tf6" value="T"> T</label>
+                    <label><input type="radio" name="tf6" value="F"> F</label>
+                </li>
+                <li>The speaker felt terrified because of a big ugly hand reaching him.
+                    <label><input type="radio" name="tf7" value="T"> T</label>
+                    <label><input type="radio" name="tf7" value="F"> F</label>
+                </li>
+                <li>The speaker had dinner in a hotel restaurant alone.
+                    <label><input type="radio" name="tf8" value="T"> T</label>
+                    <label><input type="radio" name="tf8" value="F"> F</label>
+                </li>
+                <li>The bathroom is down the stair and the first door on the right.
+                    <label><input type="radio" name="tf9" value="T"> T</label>
+                    <label><input type="radio" name="tf9" value="F"> F</label>
+                </li>
+                <li>The bathroom was completely black.
+                    <label><input type="radio" name="tf10" value="T"> T</label>
+                    <label><input type="radio" name="tf10" value="F"> F</label>
+                </li>
+            </ol>
+        </form>
+        <button id="submit-lt18-tf">Submit True/False</button>
+        <div id="lt18-tf-result"></div>
+        <hr>
+        <h2>Part 2: Fill in the Missing Words</h2>
+        <form id="lt18-fill-form">
+            <p>
+                This happened about twenty years ago, in Germany, when I was visiting a town in the south with some friends. It was kind of a (<input type="text" name="f1" size="8">) town, with a lot of old, gloomy buildings. I remember it was raining, too. It was (<input type="text" name="f2" size="8">) weather. We were having dinner in a hotel restaurant. It was big and dark, and it felt old, though it really wasn't. Anyway, I needed to use the bathroom so I asked the waitress where it was. She gave me an (<input type="text" name="f3" size="8">) key and said, "It's through there. Go out into the (<input type="text" name="f4" size="8">), down the stairs, and it's the first door on the left."<br>
+                So, I went off with this huge key, all the way to the back of the restaurant, and found myself in a gray (<input type="text" name="f5" size="8">) hallway. The first door on the left was large and heavy. It didn't look like a bathroom door, but I thought, well this must be it... So, I pulled the door open – I didn't (<input type="text" name="f6" size="8">) need the key – and it opened with this creaking noise. I found myself looking into complete (<input type="text" name="f7" size="8">). It was completely black.<br>
+                So, I thought I'd made a mistake and I turned around to go. And suddenly, out of the (<input type="text" name="f8" size="8">) of my eye, I saw this big ugly hand reaching out at me from the darkness. It (<input type="text" name="f9" size="8">) me to death. I was terrified. I just ran, all the way back (<input type="text" name="f10" size="8">) the restaurant to my friends at the table.
+            </p>
+        </form>
+        <button id="submit-lt18-fill">Submit Fill-in-the-Blanks</button>
+        <div id="lt18-fill-result"></div>
+    </div>
+    <script src="listentext18.js"></script>
+</body>
+</html> 

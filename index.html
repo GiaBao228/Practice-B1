@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>English Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="nav-buttons">
+    <a href="reading.html" class="nav-btn">Reading Test</a>
+    <a href="readingcloze.html" class="nav-btn">Cloze Test</a>
+    <a href="write.html" class="nav-btn">Writing Practice</a>
+    <a href="email.html" class="nav-btn">Email Practice</a>
+    <a href="essay.html" class="nav-btn">Essay Practice</a>
+    <a href="speaking.html" class="nav-btn">Speaking Practice</a>
+    <a href="exam.html" class="nav-btn">Exam Test</a>
+    <a href="listen.html" class="nav-btn">Listening Practice</a>
+</div>
+
+  <h1>English Quiz Practice</h1>
+  <div id="quiz"></div>
+  <button id="submitBtn" onclick="submitQuiz()">Submit Quiz</button>
+  <div id="result"></div>
+
+  <script src="questions.js"></script>
+  <script src="main.js"></script>
+  <script>
+    window.addEventListener('load', function() {
+      renderMultipleChoice();
+      renderPictureQuiz();
+      renderReading();
+      renderCloze();
+      renderWriting();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Listening Practice</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f7fb;
+      color: #333;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    /* Dropdown Select Navigation */
+    .nav-dropdown {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    select#pageSelect {
+      padding: 10px 16px;
+      font-size: 16px;
+      border: 2px solid #40c4ff;
+      border-radius: 10px;
+      background: white;
+      color: #333;
+      box-shadow: 0 2px 8px rgba(64, 196, 255, 0.2);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    select#pageSelect:hover {
+      border-color: #00b0ff;
+      box-shadow: 0 4px 12px rgba(0, 176, 255, 0.3);
+    }
+
+    .listening-section {
+      max-width: 860px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    }
+
+    h2 {
+      color: #007acc;
+      margin-top: 30px;
+      font-weight: 600;
+    }
+
+    h3 {
+      color: #333;
+      margin-top: 25px;
+    }
+
+    form ol {
+      padding-left: 20px;
+    }
+
+    form li {
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    input[type="radio"] {
+      margin-left: 10px;
+      margin-right: 5px;
+    }
+
+    input[type="text"] {
+      padding: 6px 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin: 0 5px;
+      transition: border-color 0.3s;
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #40c4ff;
+    }
+
+    button {
+      background: linear-gradient(to right, #00b4db, #0083b0);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 20px;
+      box-shadow: 0 4px 12px rgba(0, 132, 176, 0.2);
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #0095c7, #00648c);
+    }
+
+    #tf-result, #fill-result {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    @media (max-width: 600px) {
+      .listening-section {
+        padding: 20px;
+      }
+
+      button, select {
+        width: 100%;
+      }
+    }
+    .home-btn {
+  display: inline-block;
+  text-decoration: none;
+  background: linear-gradient(to right, #00b4db, #0083b0);
+  color: white;
+  padding: 12px 22px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(0, 132, 176, 0.2);
+  transition: all 0.3s ease;
+  margin-bottom: 16px;
+}
+
+.home-btn:hover {
+  background: linear-gradient(to right, #0095c7, #00648c);
+  box-shadow: 0 6px 18px rgba(0, 132, 176, 0.35);
+  transform: translateY(-2px);
+}
+audio {
+  width: 100%;
+  max-width: 500px; /* Giới hạn tối đa */
+  height: 32px; /* Giảm chiều cao */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  background: #f0f0f0;
+  margin: 10px auto;
+  display: block;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Dropdown for navigation -->
+  <div class="nav-dropdown">
+      <a href="index.html" class="home-btn">🏠 HOME Page</a>
+    <label for="pageSelect" style="font-weight: bold; margin-right: 10px;">Select Listening:</label>
+    <select id="pageSelect">
+      <option value="">-- Choose Text --</option>
+      <option value="listentext6.html">Listening Text 6</option>
+      <option value="listentext7.html">Listening Text 7</option>
+      <option value="listentext8.html">Listening Text 8</option>
+      <option value="listentext9.html">Listening Text 9</option>
+      <option value="listentext10.html">Listening Text 10</option>
+      <option value="listentext11.html">Listening Text 11</option>
+      <option value="listentext18.html">Listening Text 18</option>
+      <option value="listentext31.html">Listening Text 31</option>
+    </select>
+  </div>
+
+  <h1>Listening Practice</h1>
+<audio controls style="width: 100%; margin-bottom: 20px;">
+  <source src="audios/text04.mp3" type="audio/mpeg">
+</audio>
+
+  <div class="listening-section">
+    <h2>TEXT 4: True/False Statements</h2>
+    <form id="tf-form">
+      <ol>
+        <li>Russell knows Audrey for more than two years.
+          <label><input type="radio" name="tf1" value="T"> T</label>
+          <label><input type="radio" name="tf1" value="F"> F</label>
+        </li>
+        <li>He is in an office soccer team.
+          <label><input type="radio" name="tf2" value="T"> T</label>
+          <label><input type="radio" name="tf2" value="F"> F</label>
+        </li>
+        <li>He doesn't see Gary very often but they still keep in touch.
+          <label><input type="radio" name="tf3" value="T"> T</label>
+          <label><input type="radio" name="tf3" value="F"> F</label>
+        </li>
+        <li>His old friends are mainly from work.
+          <label><input type="radio" name="tf4" value="T"> T</label>
+          <label><input type="radio" name="tf4" value="F"> F</label>
+        </li>
+        <li>Both Audrey and Gary are his old friends.
+          <label><input type="radio" name="tf5" value="T"> T</label>
+          <label><input type="radio" name="tf5" value="F"> F</label>
+        </li>
+        <li>To Audrey, Russell is the only her friend at work that she can get along with.
+          <label><input type="radio" name="tf6" value="T"> T</label>
+          <label><input type="radio" name="tf6" value="F"> F</label>
+        </li>
+        <li>Audrey has known Lisa since she was 16 years old.
+          <label><input type="radio" name="tf7" value="T"> T</label>
+          <label><input type="radio" name="tf7" value="F"> F</label>
+        </li>
+        <li>Audrey is a musician but most of her friends are not.
+          <label><input type="radio" name="tf8" value="T"> T</label>
+          <label><input type="radio" name="tf8" value="F"> F</label>
+        </li>
+        <li>Audrey is just interested in friends in her life.
+          <label><input type="radio" name="tf9" value="T"> T</label>
+          <label><input type="radio" name="tf9" value="F"> F</label>
+        </li>
+        <li>Audrey has a lot of different friends.
+          <label><input type="radio" name="tf10" value="T"> T</label>
+          <label><input type="radio" name="tf10" value="F"> F</label>
+        </li>
+      </ol>
+    </form>
+    <button id="submit-tf">Submit True/False</button>
+    <div id="tf-result"></div>
+
+    <hr>
+    <h2>Fill in the Missing Words</h2>
+    <form id="fill-form">
+      <h3>Russell</h3>
+      <p>
+        Well, most of my friends are from work. I didn't live here before I got this job, so I met most of the friends I have now through work. Audrey is the first person I met here...so I have known her for two years. We 
+        <input type="text" name="f1"> a lot outside work, but I also have a lot of friends in other 
+        <input type="text" name="f2">. I play basketball with some guys from 
+        <input type="text" name="f3">, and then we have an office soccer team too. We get together almost every weekend to play. I have one old friend, Gary, who I kind of keep in touch with, but he lives in a different city, and we don't see each other that often. I haven't seen him since his wedding, so that's about two years. He's one of my oldest and best friends, but it's hard to stay in 
+        <input type="text" name="f4"> sometimes. So, my friends these days are mainly from work and that's fine. It's more 
+        <input type="text" name="f5"> since we spend so much time together anyway.
+      </p>
+
+      <h3>Audrey</h3>
+      <p>
+        My social life is <input type="text" name="f6"> separate from work. Russell is really the only friend I have from my job. He and I get along really well, so we see each other outside work, but 
+        <input type="text" name="f7"> I don't socialize with people from work unless I have to. I've lived in this city all my life, so I've had most of my friends for a long time. I've known my best friend, Lisa, since I was six years old—we lived in the same 
+        <input type="text" name="f8"> building as children—so that's about 20 years now. I'm also a musician...I play the guitar in a band and a lot of my friends are musicians. I've been in the same band for three years now and the other band members are my really good friends. I think it's good to know different kinds of people and I don't want my 
+        <input type="text" name="f9"> life to be about work, so I 
+        <input type="text" name="f10"> that's why I try to have a lot of different friends.
+      </p>
+    </form>
+    <button id="submit-fill">Submit Fill-in-the-Blanks</button>
+    <div id="fill-result"></div>
+  </div>
+
+  <script>
+    document.getElementById('pageSelect').addEventListener('change', function () {
+      const selectedPage = this.value;
+      window.location.href = selectedPage;
+    });
+  </script>
+
+</body>
+</html>

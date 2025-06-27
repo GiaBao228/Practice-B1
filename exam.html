@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mock Exam</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="nav-buttons">
+    <a href="index.html" class="nav-btn">Home</a>
+  </div>
+  <h1>English Mock Exam</h1>
+  <form id="examForm">
+    <section id="multiple-choice-section">
+      <h2>Multiple Choice (20 questions)</h2>
+      <div id="multiple-choice"></div>
+    </section>
+    <section id="picture-quiz-section">
+      <h2>Picture Quiz (10 questions)</h2>
+      <div id="picture-quiz"></div>
+    </section>
+    <section id="reading-section">
+      <h2>Reading Comprehension (1 passage, 5 questions)</h2>
+      <div id="reading"></div>
+    </section>
+    <section id="cloze-section">
+      <h2>Cloze Test (1 passage, 10 questions)</h2>
+      <div id="cloze"></div>
+    </section>
+    <section id="writing-section">
+      <h2>Sentence Transformation (10 questions)</h2>
+      <div id="writing"></div>
+    </section>
+    <button type="button" id="submitExamBtn" onclick="submitExam()">Submit Exam</button>
+  </form>
+  <div id="exam-result"></div>
+  <script src="questions.js"></script>
+  <script src="write.js"></script>
+  <script src="reading.js"></script>
+  <script src="readingcloze.js"></script>
+  <script src="exam.js"></script>
+</body>
+</html> 

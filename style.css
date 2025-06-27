@@ -1,0 +1,295 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 40px;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+h1 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5em;
+}
+
+.question {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 25px;
+}
+
+.question p {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+}
+
+img {
+  max-width: 300px;
+  display: block;
+  margin: 15px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+label {
+  display: block;
+  padding: 10px;
+  margin: 5px 0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-radius: 5px;
+}
+
+label:hover {
+  background-color: #f0f0f0;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+#submitBtn {
+  display: block;
+  width: 200px;
+  padding: 15px 30px;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1.1em;
+  margin: 30px auto;
+  transition: background-color 0.3s;
+}
+
+#submitBtn:hover {
+  background: #34495e;
+}
+
+#result {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 1.5em;
+  color: #2c3e50;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Add these new styles */
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.blank {
+    color: #2c3e50;
+    font-weight: bold;
+    border-bottom: 2px solid #2c3e50;
+    padding: 0 5px;
+}
+
+.passage h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin: 20px 0;
+}
+
+input[type="radio"]:checked + span {
+  font-weight: bold;
+}
+
+.question p {
+  margin: 10px 0;
+}
+
+/* Writing section styles */
+.writing-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.writing-question {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.question-number {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.original-sentence {
+    margin-bottom: 10px;
+}
+
+.keyword {
+    color: #e74c3c;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.answer-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.start-phrase {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.answer-input {
+    flex: 1;
+    padding: 8px;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.answer-input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.feedback {
+    margin-top: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+}
+
+.score {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+/* Add these styles */
+.answer-feedback {
+    margin-top: 10px;
+    padding: 5px 0;
+}
+
+.writing-question {
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.answer-section {
+    margin-bottom: 10px;
+}
+
+.nav-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  margin: 0 8px;
+  background: linear-gradient(90deg, #4f8cff 0%, #38c6d9 100%);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 16px rgba(79,140,255,0.15);
+  font-size: 1.1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav-btn:hover, .nav-btn:focus {
+  background: linear-gradient(90deg, #38c6d9 0%, #4f8cff 100%);
+  color: #fff;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 24px rgba(56,198,217,0.18);
+  outline: none;
+}
+/* =============================
+   EMAIL / WRITING PRACTICE STYLE
+   ============================= */
+
+/* Container */
+#writing-prompts {
+  background: #fff;
+  padding: 30px;
+  margin: 0 auto 30px auto;
+  max-width: 900px;
+  border-radius: 15px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+#writing-prompts h2 {
+  margin-top: 0;
+  color: #2c3e50;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+#prompt {
+  white-space: pre-line;
+}
+
+/* Dropdown */
+#topic-selector {
+  display: block;
+  margin: 0 auto 20px auto;
+  padding: 12px 20px;
+  font-size: 1.1em;
+  border-radius: 30px;
+  border: 2px solid #4f8cff;
+  background: #fff;
+  color: #333;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#topic-selector:focus {
+  border-color: #38c6d9;
+  box-shadow: 0 0 8px rgba(56,198,217,0.3);
+  outline: none;
+}
+
+/* Textarea */
+#writing-area {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  min-height: 300px;
+  padding: 20px;
+  font-size: 1.1em;
+  border: 2px solid #4f8cff;
+  border-radius: 15px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  resize: vertical;
+}
+
+#writing-area:focus {
+  border-color: #38c6d9;
+  box-shadow: 0 0 8px rgba(56,198,217,0.3);
+  outline: none;
+}
+
+/* Word count */
+#word-count {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
