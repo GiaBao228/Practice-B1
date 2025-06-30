@@ -1,6 +1,6 @@
 // listentext31.js
 const lt31Answers = {
-    q1: 'A',
+    q1: 'B',
     q2: 'C',
     q3: 'A',
     q4: 'B',
