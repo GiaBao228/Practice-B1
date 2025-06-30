@@ -1,6 +1,6 @@
 // listen.js
 // --- True/False Answers ---
-const tfAnswers = ['F','T','T','F','F','T','F','F','F','T'];
+const tfAnswers = ['F','T','T','F','F','F','F','F','F','T'];
 
 // --- Fill-in-the-Blank Answers ---
 const fillAnswers = [
