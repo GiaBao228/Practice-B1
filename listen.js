@@ -4,7 +4,7 @@ const tfAnswers = ['F','T','T','F','F','F','F','F','F','T'];
 
 // --- Fill-in-the-Blank Answers ---
 const fillAnswers = [
-    'socialize', 'departments', 'accounting', 'touch', 'practial', 'definitely',
+    'socialize', 'departments', 'accounting', 'touch', 'practical', 'definitely',
     'otherwise', 'apartment', 'whole', 'guess'
 ];
 
