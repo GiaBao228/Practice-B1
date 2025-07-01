@@ -220,12 +220,12 @@ You should answer:
       ];
 
       const prompt = document.getElementById('prompt');
-      prompt.textContent = speakingTopics[0];
+prompt.innerHTML = speakingTopics[0].replace(/- /g, '<br>• ');
 
       const selector = document.getElementById('topic-selector');
       selector.addEventListener('change', () => {
         const selectedIndex = selector.value;
-        prompt.textContent = speakingTopics[selectedIndex];
+prompt.innerHTML = speakingTopics[selectedIndex].replace(/- /g, '<br>• ');
       });
 
       // Timer
