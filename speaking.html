@@ -4,8 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Speaking Practice</title>
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
   <style>
   body {
     font-family: 'Segoe UI', Arial, sans-serif;
@@ -19,12 +17,6 @@
     color: #2c3e50;
     font-size: 2.5em;
     margin-bottom: 30px;
-  }
-
-  label {
-    font-weight: bold;
-    margin-right: 10px;
-    font-size: 1.1em;
   }
 
   #topic-selector {
@@ -73,19 +65,6 @@
     transform: translateY(-2px) scale(1.03);
   }
 
-  .time-inputs {
-    margin: 20px 0;
-  }
-
-  .time-inputs input {
-    width: 70px;
-    padding: 8px;
-    font-size: 1em;
-    border: 2px solid #3498db;
-    border-radius: 8px;
-    text-align: center;
-  }
-
   .nav-buttons {
     margin-bottom: 30px;
   }
@@ -108,8 +87,43 @@
     background: linear-gradient(90deg, #38c6d9 0%, #4f8cff 100%);
     transform: translateY(-2px) scale(1.03);
   }
-</style>
 
+.time-inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin: 20px auto;
+}
+
+.time-inputs label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #2c3e50;
+}
+
+.time-inputs input {
+  width: 80px;
+  padding: 10px;
+  margin-top: 6px;
+  font-size: 1.1em;
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  text-align: center;
+  background: #f9fbfc;
+  transition: all 0.3s ease;
+}
+
+.time-inputs input:focus {
+  outline: none;
+  border-color: #38c6d9;
+  box-shadow: 0 0 5px rgba(56,198,217,0.4);
+}
+
+  </style>
 </head>
 <body>
   <h1>Speaking Practice</h1>
@@ -138,16 +152,16 @@
 
   <!-- Chọn thời gian -->
   <div class="time-inputs">
-    <label>Minutes:
-      <input type="number" id="minutes-input" value="0" min="0">
+    <label>Minutes
+      <input type="number" id="minutes-input" value="2" min="0">
     </label>
-    <label>Seconds:
-      <input type="number" id="seconds-input" value="45" min="0" max="59">
+    <label>Seconds
+      <input type="number" id="seconds-input" value="0" min="0" max="59">
     </label>
   </div>
 
   <!-- Đồng hồ đếm ngược -->
-  <div id="timer">00:45</div>
+  <div id="timer">02:00</div>
 
   <!-- Nút điều khiển Timer -->
   <div class="timer-buttons">
@@ -224,8 +238,8 @@ You should answer:
       const secondsInput = document.getElementById('seconds-input');
 
       let countdown;
-      let timeLeft = 45; // mặc định 45 giây
-      let originalTime = 45;
+      let timeLeft = 120; // mặc định 2 phút
+      let originalTime = 120;
 
       function updateDisplay() {
         let minutes = Math.floor(timeLeft / 60);
@@ -270,8 +284,8 @@ You should answer:
       });
 
       // Init ban đầu
-      timeLeft = 45;
-      originalTime = 45;
+      timeLeft = 120;
+      originalTime = 120;
       updateDisplay();
     });
   </script>
